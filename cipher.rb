@@ -1,4 +1,4 @@
-A solution to the Caesar Cipher  cryptography problem.
+#A solution to the Caesar Cipher  cryptography problem.
 
 def cipher(word, num)
 alphabet = ('a'..'z').to_a.concat(('A'..'Z').to_a)
@@ -8,11 +8,11 @@ word.each_char do |i|
   if !alphabet.include?(i)
     new_word +=i
   else
-    new_word += alphabet[alphabet.index(i) - num]
+    new_word += alphabet[alphabet.index(i.downcase) - num]  
   end
 end
 
-return new_word
+return new_word.downcase.capitalize
 end
 
-puts cipher("Now This is a fun game to play!!!!!", 2)
+puts cipher("Apples? and Oranges!!!!!!", 2)
