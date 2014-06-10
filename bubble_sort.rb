@@ -2,17 +2,14 @@
 #This method takes in an array and returns a sorted array
 
 def bubble_sort(arr)
-	swap_counter = 1
-	while swap_counter !=0
-		swap_counter = 0
+	swapped = true
+	while swapped
+		swapped = false
 
 		for i in 0..arr.length - 2
 			if (arr[i+1] < arr[i])
-				temp = arr[i]
-				arr[i] = arr[i+1]
-				arr[i+1] = temp
-				swap_counter += 1
-
+				arr[i], arr[i + 1] = arr[i + 1], arr[i]
+				swapped = true
 			end
 		end
 
